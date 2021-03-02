@@ -1,6 +1,6 @@
 //IMPORTS 
 const express = require('express');
-const mongoose = require('mongodb');
+const mongoose = require('mongoose');
 const Messages = require('./dbMessages')
 const Pusher = require('pusher')
 const cors = require ('cors')
@@ -31,8 +31,8 @@ mongoose.connect(connectionURL,{
     useUnifiedTopology:true,
 });
 
-const db = mongoose.connection ;
-db.once('open',()=>
+
+mongoose.connection.once('open',function()
 {
     console.log("The DB is Connected 🟢");
     const msgCollection = db.collection('messages');
