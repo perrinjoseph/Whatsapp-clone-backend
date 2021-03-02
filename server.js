@@ -21,7 +21,11 @@ const pusher = new Pusher({
 //middlewares
 app.use(express.json());
 //DO NOT USE THIS IN PRODUCTION !! WE BREAK ALL ENCRYPTION HERE BY GIVING ANYONE ACCESS TO CALL OUR SERVER this is something to do with cors header.
-app.use(cors())
+app.use((req,res,next)=>{
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.setHeader("Access-Control-Allow-Headers","*");
+    next();
+});
 
 //db connections 
 const connectionURL = "mongodb+srv://admin:nirrep98@cluster0.yazsk.mongodb.net/whatsappdb?retryWrites=true&w=majority";
