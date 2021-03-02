@@ -92,7 +92,7 @@ app.get('/messages/sync',(req,res)=>
 })
 
 //app listen 
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
     console.log("The Server Is Up And Running: 🟢", )
 })
 
