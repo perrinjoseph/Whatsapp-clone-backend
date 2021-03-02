@@ -35,8 +35,8 @@ mongoose.connect(connectionURL,{
     useUnifiedTopology:true,
 });
 
-
-mongoose.connection.once('open',function()
+const db = mongoose.connection;
+db.once('open',function()
 {
     console.log("The DB is Connected 🟢");
     const msgCollection = db.collection('messages');
