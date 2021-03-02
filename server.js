@@ -1,9 +1,9 @@
 //IMPORTS 
-import express from 'express';
-import mongoose from 'mongoose';
-import Messages from './dbMessages.js'
-import Pusher from 'pusher';
-import cors from 'cors'
+const express = require('express');
+const mongoose = require('mongodb');
+const Messages = require('./dbMessages')
+const Pusher = require('pusher')
+const cors = require ('cors')
 
 
 //init the app
