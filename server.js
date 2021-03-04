@@ -21,6 +21,7 @@ const pusher = new Pusher({
 //middlewares
 app.use(express.json());
 //DO NOT USE THIS IN PRODUCTION !! WE BREAK ALL ENCRYPTION HERE BY GIVING ANYONE ACCESS TO CALL OUR SERVER this is something to do with cors header.
+app.use(cors())
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin","*");
     res.setHeader("Access-Control-Allow-Headers","*");
@@ -101,3 +102,6 @@ app.listen(PORT,()=>{
 })
 
 //  nirrep98
+
+
+
